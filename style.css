@@ -6,11 +6,11 @@
     --color-1: #334EAC; /*planetary*/
     --bg-1: #081F5C; /*Galaxy*/
 }
-
+/*mudando*/
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
 
 body {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,17 +24,19 @@ input#open {
   
 .valentines-day-card {
     position: relative;
-    width: 500px;
-    height:500px;
+    width: 100%;
+    max-width: 500px;
+    height:auto;
     transform-style: preserve-3d;
-      transform: perspective(2500px);
+      transform: perspective(2300px);
     transition: .3s;
 }
   
 .card-front {
     position: relative;
     background-color: var(--color-3);
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height:500px;
     transform-origin: left;
     box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 30px 0 50px rgba(0,0,0,0.3);
@@ -96,7 +98,7 @@ input#open {
     top:90px;
     left:50px;
     color: black;
-    font-size:50px;
+    font-size:40px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -127,7 +129,6 @@ input#open {
 .text-one {
     position: absolute;
     color: black;
-    font-size: 18px;
     top: -10px;
     width:480px;
     text-align: center;
@@ -136,11 +137,14 @@ input#open {
 .text-two{
     position: absolute;
     color: black;
-    font-size: 18px;
     top: 380px;
     left: 230px;
     width:240px;
     text-align: center;
+}
+
+.text-one, .text-two{
+    font-size: 16px;
 }
 
 img{
@@ -199,5 +203,36 @@ img{
     }
     25%, 60% {
       transform: scale(1.1) rotate(-45deg);
+    }
+}
+
+@media (max-width: 1200px){
+    body{
+        height: auto;
+    }
+
+    .valentines-day-card, .card-front, .card-inside{
+        transform: scale(0.9);
+    }
+
+    img{
+        width: 40%;
+    }
+
+    .text-one {
+        top: 0px;
+        left: 50px;
+        width:400px;
+        text-align: center;
+    }
+
+    .text-two{
+        top: 410px;
+        left: 100px;
+        width:300px;
+    }
+
+    .smile, .eyes{
+        display: none;
     }
 }
