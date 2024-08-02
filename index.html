@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma carta</title>
+    <link rel="stylesheet" href="src/style/global.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="note-paper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Título da carta, </strong> <!-- Aqui deve ser escrito o título da carta -->
+                        <p> <!-- Aqui deve ser escrito o conteúdo da carta -->
+                            Se eu contasse pro meu eu de um mês do passado que no final das férias ele taria gostando de você,
+                            talvez ele não acreditasse em mim... 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div> <!-- Supostamente, cria um coração para servir de clique para abrir a carta -->
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.querySelector('.note-paper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+
+</html>
