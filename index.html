@@ -6,34 +6,40 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma carta</title>
-    <link rel="stylesheet" href="src/style/global.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-    <div class="container">
-        <div class="note-paper">
-            <div class="envelope">
-                <div class="letter">
-                    <div class="text">
-                        <strong>Título da carta, </strong> <!-- Aqui deve ser escrito o título da carta -->
-                        <p> <!-- Aqui deve ser escrito o conteúdo da carta -->
-                            Se eu contasse pro meu eu de um mês do passado que no final das férias ele taria gostando de você,
-                            talvez ele não acreditasse em mim... 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="heart"></div> <!-- Supostamente, cria um coração para servir de clique para abrir a carta -->
+
+    <div class="valentines-day-card">
+
+        <input id="open" type="checkbox">
+
+        <label class="open" for="open"></label>
+
+        <div class="card-front">
+            <div class="note">Clique para Abrir Quando Estiver com Saudade</div>
+        </div>
+        
+        <div class="card-inside">
+          <div class="text-one">
+            <h1>Eu também estou com saudade!</h1>
+            <img src="foto1.jpg" alt="Nós">
+            <p>
+                E estou pensando em nossos momentos juntos, ansioso para o momento que criaremos novas memórias juntos.
+                E sempre que penso nesses momentos eu começo a sorrir.
+            </p>
+          </div>
+          <div class="smile"></div>
+          <div class="text-two">
+            <p>
+                Isso me ajuda a lembrar que vale a pena e ainda teremos muitas memórias para criar juntos!
+            </p>
+          </div>
+          <div class="eyes"></div>
         </div>
     </div>
-
-    <script>
-        const envelope = document.querySelector('.note-paper');
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
-        });
-    </script>
 </body>
-
 </html>

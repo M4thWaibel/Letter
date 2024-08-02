@@ -1,0 +1,203 @@
+:root{
+    --color-5: #F7F2EB;
+    --color-4: #D0E3FF; /*Sky*/
+    --color-3: #7096D1; /*Universe*/
+    --color-2: #BAD6EB; /*venus*/
+    --color-1: #334EAC; /*planetary*/
+    --bg-1: #081F5C; /*Galaxy*/
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-1);
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+input#open {
+    display: none;
+}
+  
+.valentines-day-card {
+    position: relative;
+    width: 500px;
+    height:500px;
+    transform-style: preserve-3d;
+      transform: perspective(2500px);
+    transition: .3s;
+}
+  
+.card-front {
+    position: relative;
+    background-color: var(--color-3);
+    width: 500px;
+    height:500px;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 30px 0 50px rgba(0,0,0,0.3);
+    transition: .3s;
+}
+  
+.card-front:before {
+    content:"";
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background-color: var(--color-1);
+    top: 10px;
+    left: 10px;
+}
+  
+.card-inside {
+    position: absolute;
+    background-color: var(--color-4);
+    width: 500px;
+    height:500px;
+    z-index:-1;
+    left:0;
+    top:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.22), 100px 20px 100px rgba(0,0,0,0.1);
+}
+  
+.open {
+    position: absolute;
+    width: 500px;
+    height:500px;
+    left:0;
+    top:0;
+    background-color: transparent;
+    z-index:6;
+    cursor: pointer;
+}
+  
+#open:checked ~ .card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+}
+  
+#open:checked ~ .card-front:before {
+    z-index:5;
+    background-color: var(--color-4);
+    width:500px;
+    height:500px;
+    top:0;
+    left:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,0.1);
+}
+
+.note {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    background-color: var(--color-3);
+    top:90px;
+    left:50px;
+    color: black;
+    font-size:50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+}
+  
+.note:before, .note:after {
+    position: absolute;
+    content:"";
+    background-color: #cf0707;
+    width: 80px;
+    height:80px;
+}
+  
+.note:before {
+    transform: rotate(-45deg);
+    top:-40px;
+    left:160px;
+}
+  
+.note:after {
+    border-radius:50%;
+    top:-70px;
+    left:130px;
+    box-shadow:60px 0 #cf0707;
+}
+
+.text-one {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    top: -10px;
+    width:480px;
+    text-align: center;
+}
+
+.text-two{
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    top: 360px;
+    left: 230px;
+    width:200px;
+    text-align: center;
+}
+
+img{
+    width: 30%;
+}
+  
+.smile {
+    position: absolute;
+    width:60px;
+    height:30px;
+    background-color: #333;
+    z-index:1;
+    border-radius: 0 0 100px 100px;
+    top:450px;
+    left:90px;
+    overflow: hidden;
+}
+  
+.smile:before {
+    content:"";
+    position: absolute;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    background-color: #030202;
+    top:10px;
+    left:10px;
+}
+  
+.eyes {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #333;
+    width:20px;
+    height:20px;
+    z-index:1;
+    top:400px;
+    left:150px;
+    box-shadow: -80px 0 #333;
+    transform-origin: 50%;
+    animation: close 2s infinite;
+}
+  
+@keyframes close {
+      0%, 100% {
+          transform: scale(1, .05);
+      }
+      5%, 95% {
+          transform: scale(1, 1);
+      }
+}
+  
+@keyframes beat {
+    0%, 40%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    25%, 60% {
+      transform: scale(1.1) rotate(-45deg);
+    }
+}
